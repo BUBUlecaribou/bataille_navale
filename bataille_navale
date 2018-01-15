@@ -1,4 +1,3 @@
-
 //*************************************************************************** //
 //  PROGRAMME :  modele.ccp (mettre � jour ce cartouche)
 //  DATE      :
@@ -23,7 +22,7 @@ const int MAXCH = 30;
 // ================================== Types ================================= //
 /* d�clarez ici les nouveaux types */
 
-typedef char t_grille[MAXPLT][MAXPLT];
+typedef char t_grille[MAXPLT][MAXPLT];  //lign col
 
 typedef char t_chaine[MAXCH];
 
@@ -39,19 +38,40 @@ typedef struct  {
 /* d�clarez ici les sous-programmes */
 
 
-int menu (int & chx)
+char menu ()
 {
-    //aff le menu et envoyer le choix
+    char chx;
+
+    cout<<"     Bataille navale "<<endl;
+    cout<<"menu:"<<endl;
+    cout<<" <p>jouer en pvp"<<endl;
+    cout<<" <q>quitter"<<endl;
+    cout<<"que voulez vous faire ?"<<endl;
+    cin>>chx;
+
+
+    return(chx);
 }
 
 void nom_joueur(t_chaine & nom_joueur)
 {
-    //demender le nom d'un joueur
+    //demender le nom d'un joueur 
 }
 
 void initgrille(t_grille & grille)
 {
-    //mettre le grille a espace
+    int cptl , cptc;
+    
+    
+    
+    for(cptl = 0 ; cptl < MAXPLT ;cptl++)
+    {
+        for(cptc = 0 ; cptc < MAXPLT ; cptc++)
+        {
+         grille[cptl][cptc]=' ';
+        }
+            
+    }
 }
 
 
@@ -75,12 +95,12 @@ void demender_placement(t_grille & grille_placement)
 
 }
 
-void tir( t_grille & grille_tir ; t_grille & grille_placement ; bool & resultat)
+void tir( t_grille & grille_tir , t_grille & grille_placement , bool & resultat)
 {
 
 }
 
-void ( bool resultat ; bool & joueur ; int & score )
+void qgagnant( bool resultat , int & joueur , int & score )
 {
 
 }
@@ -93,8 +113,23 @@ int main(void)
 
    // D�clarations locales
 
+
+    
+
+
+
    // Actions
    setlocale(LC_ALL, "french");
+
+
+
+
+
+
+
+
+
+
 
    // retour au syst�me d'exploitattion
    return 0;
